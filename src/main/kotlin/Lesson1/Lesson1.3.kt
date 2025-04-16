@@ -6,8 +6,8 @@ fun main () {
     var minutes = "07"
 
     println("Year $year")
-    println("hour $hours")
-    println("minute $minutes")
+    println("Departure hour $hours")
+    println("Departure minute $minutes")
 
     hours = "10"
     minutes = "55"
