@@ -1,16 +1,16 @@
 package org.example.Lesson1
 
 fun main () {
-    val year = 1961
-    var hour = "09"
-    var minute = "07"
+    val year = "1961"
+    var hours = "09"
+    var minutes = "07"
 
     println("Year $year")
-//    println("hour $hour")
-//    println("minute $minute")
+    println("hour $hours")
+    println("minute $minutes")
 
-    hour = "10"
-    minute = "55"
+    hours = "10"
+    minutes = "55"
 
-    println("Landing time: $hour:$minute")
+    println("Landing time: $hours:$minutes")
 }
