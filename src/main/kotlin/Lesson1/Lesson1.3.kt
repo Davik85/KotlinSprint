@@ -11,5 +11,6 @@ fun main () {
 
     hour = "10"
     minute = "55"
+
     println("Landing time: $hour:$minute")
 }
