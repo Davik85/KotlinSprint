@@ -1,6 +1,9 @@
 package org.example.Lesson5
 
 const val CENTIMETERS_IN_METER = 100.0
+const val UNDERWEIGHT_THRESHOLD = 18.5
+const val NORMAL_WEIGHT_THRESHOLD = 25.0
+const val OVERWEIGHT_THRESHOLD = 30.0
 
 fun main() {
     print("Please enter your weight in kilograms: ")
@@ -18,9 +21,9 @@ fun main() {
     val bmi = weight / (heightMeters * heightMeters)
 
     val category = when {
-        bmi < 18.5 -> "Underweight"
-        bmi < 25 -> "Normal weight"
-        bmi < 30 -> "Overweight"
+        bmi < UNDERWEIGHT_THRESHOLD -> "Underweight"
+        bmi < NORMAL_WEIGHT_THRESHOLD -> "Normal weight"
+        bmi < OVERWEIGHT_THRESHOLD -> "Overweight"
         else -> "Obesity"
     }
 
