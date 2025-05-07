@@ -21,7 +21,7 @@ fun main() {
             println("Authorization successful.")
             break
         } else {
-            println("Incorrect login or password. Please try again.\n")
+            println("Incorrect login or password.  Please try again.\n")
         }
     }
 }
