@@ -9,13 +9,7 @@ fun main() {
         return
     }
 
-    var remaining = seconds
-
     println("Timer started for $seconds seconds...")
-    while (remaining > 0) {
-        println("${remaining--}...")
-        Thread.sleep(1000)
-    }
-
+    Thread.sleep(seconds * 1000L)
     println("Time's up! $seconds seconds have passed.")
 }
