@@ -10,18 +10,21 @@ fun main() {
 
     println("\nAccount created successfully! Please log in.\n")
 
-    while (true) {
+    var inputUsername: String
+    var inputPassword: String
+
+    do {
         print("Enter your username: ")
-        val inputUsername = readln()
+        inputUsername = readln()
 
         print("Enter your password: ")
-        val inputPassword = readln()
+        inputPassword = readln()
 
-        if (inputUsername == registeredUsername && inputPassword == registeredPassword) {
-            println("Authorization successful.")
-            break
-        } else {
-            println("Incorrect login or password.  Please try again.\n")
+        if (inputUsername != registeredUsername || inputPassword != registeredPassword) {
+            println("Incorrect login or password. Please try again.\n")
         }
-    }
+    } while (inputUsername != registeredUsername || inputPassword != registeredPassword)
+
+    println("Authorization successful.")
 }
+
