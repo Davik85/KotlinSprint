@@ -3,14 +3,15 @@ package org.example.Lesson6
 fun main() {
     val secretNumber = (1..9).random()
     val maxAttempts = 5
-    var attemptsLeft = maxAttempts
+    var attempt = 1
+    var guess: Int?
 
     println("Welcome to the number guessing game!")
     println("Guess the number between 1 and 9. You have $maxAttempts attempts.")
 
-    while (attemptsLeft > 0) {
+    do {
         print("Enter your guess: ")
-        val guess = readln().toIntOrNull()
+        guess = readln().toIntOrNull()
 
         if (guess == null || guess !in 1..9) {
             println("Invalid input. Please enter a number between 1 and 9.")
@@ -21,12 +22,14 @@ fun main() {
             println("That was a magnificent game!")
             return
         } else {
-            attemptsLeft--
-            if (attemptsLeft > 0) {
-                println("Wrong guess. Attempts left: $attemptsLeft")
+            if (attempt < maxAttempts) {
+                println("Wrong guess. Attempts left: ${maxAttempts - attempt}")
             }
+            attempt++
         }
-    }
+
+    } while (attempt <= maxAttempts && guess != secretNumber)
 
     println("Out of attempts! The number was $secretNumber.")
 }
+
