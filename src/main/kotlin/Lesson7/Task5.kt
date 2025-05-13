@@ -1,11 +1,13 @@
 package org.example.Lesson7
 
+const val MIN_PASSWORD_LENGTH = 6
+
 fun main() {
-    print("Enter the desired password length (minimum 6): ")
+    print("Enter the desired password length (minimum $MIN_PASSWORD_LENGTH): ")
     val length = readln().toIntOrNull()
 
-    if (length == null || length < 6) {
-        println("Invalid input. Password must be at least 6 characters long.")
+    if (length == null || length < MIN_PASSWORD_LENGTH) {
+        println("Invalid input. Password must be at least $MIN_PASSWORD_LENGTH characters long.")
         return
     }
 
