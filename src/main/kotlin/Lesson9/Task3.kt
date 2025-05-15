@@ -1,10 +1,8 @@
 package org.example.Lesson9
 
-const val EGGS_PER_PORTION = 2
-const val MILK_PER_PORTION = 50 // ml
-const val BUTTER_PER_PORTION = 15 // g
-
 fun main() {
+    val baseIngredients = listOf(2, 50, 15)
+
     print("Enter the number of portions: ")
     val portions = readln().toIntOrNull()
 
@@ -13,12 +11,11 @@ fun main() {
         return
     }
 
-    val totalEggs = EGGS_PER_PORTION * portions
-    val totalMilk = MILK_PER_PORTION * portions
-    val totalButter = BUTTER_PER_PORTION * portions
+    val requiredIngredients = baseIngredients.map { it * portions }
 
     println("For $portions portions you will need:")
-    println("Eggs – $totalEggs")
-    println("Milk – ${totalMilk}ml")
-    println("Butter – ${totalButter}g")
+    println("Eggs – ${requiredIngredients[0]}")
+    println("Milk – ${requiredIngredients[1]} ml")
+    println("Butter – ${requiredIngredients[2]} g")
 }
+
