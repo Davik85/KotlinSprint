@@ -15,14 +15,12 @@ fun main() {
     room.printRoomInfo()
 }
 
-// Represents a participant in a voice room
 class Participant(
     val avatar: String,
     val nickname: String,
     var status: String
 )
 
-// Represents a voice room for communication
 class VoiceRoom(
     val cover: String,
     val title: String
@@ -33,7 +31,6 @@ class VoiceRoom(
         participants.add(participant)
     }
 
-    // Updates the status of a participant by nickname
     fun updateParticipantStatus(nickname: String, newStatus: String) {
         val participant = participants.find { it.nickname == nickname }
         if (participant != null) {
