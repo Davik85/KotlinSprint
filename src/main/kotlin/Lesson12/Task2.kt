@@ -1,5 +1,16 @@
 package org.example.Lesson12
 
+fun main() {
+    val weather = WeatherDay(
+        dayTemperature = 25,
+        nightTemperature = 15,
+        hasPrecipitation = true
+    )
+
+    weather.printWeatherInfo()
+}
+
+
 class WeatherDay(
     val dayTemperature: Int,
     val nightTemperature: Int,
