@@ -15,37 +15,23 @@ fun main() {
     forum.printThread()
 }
 
-class ForumUser private constructor(
+class ForumUser(
     val userId: Int,
     val userName: String
-) {
-    companion object {
-        private var lastUserId = 0
+)
 
-        fun create(name: String): ForumUser {
-            lastUserId++
-            return ForumUser(lastUserId, name)
-        }
-    }
-}
-
-class ForumMessage private constructor(
+class ForumMessage(
     val authorId: Int,
     val message: String
-) {
-    companion object {
-        fun create(authorId: Int, message: String): ForumMessage {
-            return ForumMessage(authorId, message)
-        }
-    }
-}
+)
 
 class Forum {
     private val users = mutableListOf<ForumUser>()
     private val messages = mutableListOf<ForumMessage>()
+    private var lastUserId = 0
 
     fun createNewUser(name: String): ForumUser {
-        val user = ForumUser.create(name)
+        val user = ForumUser(++lastUserId, name)
         users.add(user)
         return user
     }
@@ -53,7 +39,7 @@ class Forum {
     fun createNewMessage(authorId: Int, message: String) {
         val userExists = users.any { it.userId == authorId }
         if (userExists) {
-            messages.add(ForumMessage.create(authorId, message))
+            messages.add(ForumMessage(authorId, message))
         } else {
             println("User with ID $authorId not found. Message not added.")
         }
