@@ -3,7 +3,8 @@ package org.example.Lesson11
 data class RecipeCategory(
     val id: String,
     val title: String,
-    val imageUrl: String
+    val imageUrl: String,
+    val recipes: List<Recipe>
 )
 
 data class Recipe(
