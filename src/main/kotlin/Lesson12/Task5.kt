@@ -25,7 +25,7 @@ fun main() {
 
 const val KELVIN_TO_CELSIUS_OFFSET2 = 273.15
 
-class WeatherReport(
+class WeatherReport1(
     dayTemperatureK: Double,
     nightTemperatureK: Double,
     hasPrecipitationInput: Boolean
