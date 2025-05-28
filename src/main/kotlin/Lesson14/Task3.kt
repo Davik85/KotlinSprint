@@ -1,19 +1,22 @@
 package org.example.Lesson14
 
+const val COLOR_BLACK = "black"
+const val COLOR_WHITE = "white"
+
 fun main() {
     val figures = listOf(
-        Circle("black", 5.0),
-        Circle("white", 3.0),
-        Rectangle("white", 4.0, 6.0),
-        Rectangle("black", 2.5, 7.0)
+        Circle(COLOR_BLACK, 5.0),
+        Circle(COLOR_WHITE, 3.0),
+        Rectangle(COLOR_WHITE, 4.0, 6.0),
+        Rectangle(COLOR_BLACK, 2.5, 7.0)
     )
 
     val blackPerimeterSum = figures
-        .filter { it.color == "black" }
+        .filter { it.color == COLOR_BLACK }
         .sumOf { it.perimeter() }
 
     val whiteAreaSum = figures
-        .filter { it.color == "white" }
+        .filter { it.color == COLOR_WHITE }
         .sumOf { it.area() }
 
     println("Total perimeter of black figures: %.2f".format(blackPerimeterSum))
