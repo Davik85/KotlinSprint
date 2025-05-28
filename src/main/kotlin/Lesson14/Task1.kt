@@ -9,29 +9,35 @@ fun main() {
     println()
 
     cargoShip.printInfo()
-    println("Cargo capacity: ${cargoShip.cargoCapacity} tons\n")
+    println()
 
     icebreaker.printInfo()
-    println("Can break ice: ${icebreaker.canBreakIce}")
 }
 
 open class Liner(
     open val name: String,
     open val speed: Int = 30,
-    open val capacity: Int = 300
+    open val passengerCapacity: Int = 300,
+    open val cargoCapacity: Int = 1000
 ) {
-    fun printInfo() {
-        println("Ship: $name | Speed: $speed knots | Capacity: $capacity passengers")
+    open fun printInfo() {
+        println("Ship: $name | Speed: $speed knots | Passenger Capacity: $passengerCapacity | Cargo Capacity: $cargoCapacity tons")
     }
 }
 
 class CargoShip(
-    override val name: String,
-    val cargoCapacity: Int = 10000
-) : Liner(name, speed = 20, capacity = 50)
+    override val name: String
+) : Liner(name, speed = 20, passengerCapacity = 50, cargoCapacity = 10000)
 
 class Icebreaker(
     override val name: String,
     val canBreakIce: Boolean = true
-) : Liner(name, speed = 15, capacity = 80)
+) : Liner(name, speed = 15, passengerCapacity = 80, cargoCapacity = 500) {
+
+    override fun printInfo() {
+        super.printInfo()
+        println("Can break ice: $canBreakIce")
+    }
+}
+
 
