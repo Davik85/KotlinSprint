@@ -1,5 +1,9 @@
 package org.example.Lesson16
 
+import kotlin.math.pow
+
+private const val PI = 3.14 // File-level constant, fully encapsulated
+
 fun main() {
     val circle = Circle(5.0)
 
@@ -12,15 +16,12 @@ fun main() {
 
 class Circle(private val radius: Double) {
 
-    companion object {
-        private const val PI = 3.14
-    }
-
     fun calculateCircumference(): Double {
         return 2 * PI * radius
     }
 
     fun calculateArea(): Double {
-        return PI * radius * radius
+        return PI * radius.pow(2)
     }
 }
+
