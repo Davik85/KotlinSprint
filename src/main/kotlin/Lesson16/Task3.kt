@@ -9,9 +9,6 @@ fun main() {
     println("✅ Password correct: $result")
 }
 
-class User(val login: String, private val password: String) {
-
-    fun isPasswordCorrect(input: String): Boolean {
-        return input == password
-    }
+class User(private val login: String, private val password: String) {
+    fun isPasswordCorrect(input: String) = input == password
 }
