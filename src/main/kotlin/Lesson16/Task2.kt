@@ -2,7 +2,7 @@ package org.example.Lesson16
 
 import kotlin.math.pow
 
-private const val PI = 3.14 // File-level constant, fully encapsulated
+private const val PI = 3.14
 
 fun main() {
     val circle = Circle(5.0)
