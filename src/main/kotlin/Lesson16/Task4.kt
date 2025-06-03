@@ -1,17 +1,17 @@
 package org.example.Lesson16
 
 fun main() {
-    val order = Order(orderNumber = 1001, status = "Pending")
+    val order = Order(1001)
     order.printStatus()
 
     order.requestStatusUpdate("Shipped")
     order.printStatus()
 }
 
-class Order(
-    val orderNumber: Int,
-    private var status: String
-) {
+class Order(private val orderNumber: Int) {
+
+    private var status: String = "Pending"
+
     fun printStatus() {
         println("Order #$orderNumber status: $status")
     }
