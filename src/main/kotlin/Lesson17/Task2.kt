@@ -18,7 +18,7 @@ class Ship(name: String, var averageSpeed: Double, var homePort: String) {
 
     var name: String
         get() = _name
-        set(_) {
+        set(value) {
             println("Ship name cannot be changed!")
         }
 
@@ -28,3 +28,4 @@ class Ship(name: String, var averageSpeed: Double, var homePort: String) {
         println("Average speed: $averageSpeed knots")
     }
 }
+
