@@ -1,16 +1,10 @@
 package org.example.Lesson17
 
-class QuizItem(question: String, answer: String) {
+class QuizItem(val question: String, answer: String) {
 
-    private var _question = question
-    private var _answer = answer
-
-    val question: String
-        get() = _question
-
-    var answer: String
-        get() = _answer
+    var answer: String = answer
+        get() = field
         set(value) {
-            _answer = value
+            field = value
         }
 }
