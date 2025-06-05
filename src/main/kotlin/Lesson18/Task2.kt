@@ -1,7 +1,5 @@
 package org.example.Lesson18
 
-import kotlin.random.Random
-
 fun main() {
     val diceList: List<Dice> = listOf(
         D4Dice(),
@@ -15,9 +13,10 @@ fun main() {
     diceList.forEach { it.roll() }
 }
 
-open class Dice(private val sides: Int) {
-    open fun roll() {
-        val result = Random.nextInt(1, sides + 1)
+abstract class Dice(private val sides: Int) {
+
+    fun roll() {
+        val result = (1..sides).random()
         println("Rolled a $sides-sided die: $result")
     }
 }
