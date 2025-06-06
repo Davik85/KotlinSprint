@@ -11,10 +11,8 @@ fun main() {
     animals.forEach { it.eat() }
 }
 
-open class Animal(val nickname: String) {
-    open fun eat() {
-        println("$nickname -> is eating")
-    }
+abstract class Animal(val nickname: String) {
+    abstract fun eat()
 
     fun sleep() {
         println("$nickname -> is sleeping")
@@ -38,3 +36,4 @@ class Cat(nickname: String) : Animal(nickname) {
         println("$nickname -> eats fish")
     }
 }
+
