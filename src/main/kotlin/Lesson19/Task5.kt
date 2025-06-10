@@ -8,24 +8,27 @@ fun main() {
 
     val people = mutableListOf<Person>()
 
-    repeat(5) {
-        print("Enter person ${it + 1}: ")
-        val input = readln().trim().split(" ")
+    repeat(5) { index ->
+        while (true) {
+            print("Enter person ${index + 1}: ")
+            val input = readln().trim().split(" ")
 
-        if (input.size != 2) {
-            println("Invalid format. Please enter: name gender")
-            return
+            if (input.size != 2) {
+                println("Invalid format. Please enter: name gender")
+                continue
+            }
+
+            val name = input[0]
+            val gender = try {
+                Gender.valueOf(input[1].uppercase())
+            } catch (e: IllegalArgumentException) {
+                println("Invalid gender. Please use MALE or FEMALE.")
+                continue
+            }
+
+            people.add(Person(name, gender))
+            break
         }
-
-        val name = input[0]
-        val gender = try {
-            Gender.valueOf(input[1].uppercase())
-        } catch (e: IllegalArgumentException) {
-            println("Invalid gender. Please use MALE or FEMALE.")
-            return
-        }
-
-        people.add(Person(name, gender))
     }
 
     println("\nList of people in the card index:")
@@ -38,3 +41,4 @@ enum class Gender(val displayName: String) {
 }
 
 class Person(val name: String, val gender: Gender)
+
