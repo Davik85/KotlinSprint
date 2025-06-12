@@ -11,7 +11,7 @@ fun main() {
 }
 
 class Robot {
-    private var modifier: ((String) -> String)? = null
+    private var modifier: (String) -> String = { it }
 
     private val phrases = listOf(
         "Darkness is coming",
@@ -23,7 +23,7 @@ class Robot {
 
     fun say() {
         val phrase = phrases.random()
-        val output = modifier?.invoke(phrase) ?: phrase
+        val output = modifier(phrase)
         println(output)
     }
 
@@ -31,3 +31,4 @@ class Robot {
         modifier = mod
     }
 }
+
