@@ -1,10 +1,10 @@
 package org.example.Lesson20
 
 fun main() {
-    val playerWithKey = Player(hasKey = true)
-    val playerWithoutKey = Player(hasKey = false)
+    val playerWithKey = Player1(hasKey = true)
+    val playerWithoutKey = Player1(hasKey = false)
 
-    val checkDoorStatus: (Player) -> String = { player ->
+    val checkDoorStatus: (Player1) -> String = { player ->
         if (player.hasKey) "The player opened the door"
         else "The door is locked"
     }
@@ -13,4 +13,4 @@ fun main() {
     println(checkDoorStatus(playerWithoutKey))
 }
 
-class Player(val hasKey: Boolean)
+class Player1(val hasKey: Boolean)
