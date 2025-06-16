@@ -2,30 +2,34 @@ package org.example.Lesson22
 
 import java.time.LocalDateTime
 
-const val ALPHA_CENTAURI_NAME = "Alpha Centauri Star System"
-const val ALPHA_CENTAURI_DESCRIPTION = "Closest known star system to the Solar System."
-val ALPHA_CENTAURI_DATE = LocalDateTime.of(2150, 5, 1, 14, 30)
-const val ALPHA_CENTAURI_DISTANCE_LY = 4.37
+private const val ALPHA_CENTAURI_NAME = "Alpha Centauri"
+private const val ALPHA_CENTAURI_DESCRIPTION = "A nearby star system with potential habitable planets."
+private val ALPHA_CENTAURI_DATE: LocalDateTime = LocalDateTime.of(2150, 5, 1, 14, 30)
+private const val ALPHA_CENTAURI_DISTANCE = 4.37
 
 data class GalacticGuide(
-    val title: String,
+    val name: String,
     val description: String,
     val dateTime: LocalDateTime,
-    val distanceFromEarthLy: Double
+    val distanceFromEarth: Double
 )
 
 fun main() {
     val alphaCentauri = GalacticGuide(
-        title = ALPHA_CENTAURI_NAME,
+        name = ALPHA_CENTAURI_NAME,
         description = ALPHA_CENTAURI_DESCRIPTION,
         dateTime = ALPHA_CENTAURI_DATE,
-        distanceFromEarthLy = ALPHA_CENTAURI_DISTANCE_LY
+        distanceFromEarth = ALPHA_CENTAURI_DISTANCE
     )
 
-    val (title, description, dateTime, distanceFromEarthLy) = alphaCentauri
+    val name = alphaCentauri.component1()
+    val description = alphaCentauri.component2()
+    val dateTime = alphaCentauri.component3()
+    val distance = alphaCentauri.component4()
 
-    println("📍 $title")
-    println("📝 $description")
-    println("📅 Event Time: $dateTime")
-    println("📏 Distance from Earth: $distanceFromEarthLy light-years")
+    println("Galactic Event:")
+    println("Name: $name")
+    println("Description: $description")
+    println("Date and Time: $dateTime")
+    println("Distance from Earth: $distance light-years")
 }
