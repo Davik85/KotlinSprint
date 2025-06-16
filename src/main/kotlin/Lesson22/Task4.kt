@@ -7,10 +7,9 @@ fun main() {
 
 class MainScreenViewModel {
 
-    private var mainScreenState = MainScreenState(data = "", isLoading = false)
+    private var mainScreenState = MainScreenState(data = null)
 
     fun loadData() {
-        mainScreenState = MainScreenState(data = "", isLoading = false)
         printState("Initial")
 
         mainScreenState = mainScreenState.copy(isLoading = true)
@@ -26,6 +25,6 @@ class MainScreenViewModel {
 }
 
 data class MainScreenState(
-    val data: String,
+    val data: String?, // now nullable
     val isLoading: Boolean = false
 )
